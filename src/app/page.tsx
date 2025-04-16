@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [state, formAction, isPending] = useActionState(addUrl, null);
-  const currentUrl = window.location.href;
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
 
   return (
     <div className="flex flex-col justify-center items-center h-lvh space-y-3 p-5">
